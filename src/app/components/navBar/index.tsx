@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import tw from "twin.macro"
 import { Logo } from "../logo"
+import { NavItems } from "./NavItems"
 
 const NavBarContainer = styled.div`
   min-height: 68px;
@@ -11,7 +12,7 @@ const NavBarContainer = styled.div`
     items-center
     justify-between
     w-full
-    max-w-2xl
+    max-w-screen-2xl
     lg:pl-12
     lg:pr-12
   `}
@@ -24,7 +25,8 @@ export const NavBar = () => {
       <LogoContainer>
         <Logo />
       </LogoContainer>
-      <h1>NavBar</h1>
+      
+      <NavItems/>
     </NavBarContainer>
   )
 }

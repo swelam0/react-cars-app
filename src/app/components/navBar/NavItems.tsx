@@ -2,6 +2,11 @@ import styled from "styled-components"
 import tw from "twin.macro"
 import { useMediaQuery } from "react-responsive"
 import { SCREENS } from "../responsive"
+import "./index.css"
+
+interface Props {
+  show: boolean
+}
 
 const ListContainer = styled.ul`
   ${tw`
@@ -12,7 +17,7 @@ const ListContainer = styled.ul`
 
 const NavItem = styled.li`
   ${tw`
-    text-xs
+    text-sm
     md:text-base
     font-medium
     mr-1
@@ -22,14 +27,15 @@ const NavItem = styled.li`
     hover: text-gray-700  
     transition
     ease-in-out
-    duration-300
+    duration-500
 `}
 `
 
-export const NavItems = () => {
+export const NavItems = ({ show }:Props) => {
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm })
+
   return (
-    <ListContainer>
+    <ListContainer className={isMobile ? `mobVersion ${show? 'active' : ''}` : "" }>
       <NavItem>
         <a href="#!">Home</a>
       </NavItem>

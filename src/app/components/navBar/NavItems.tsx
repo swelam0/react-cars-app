@@ -24,18 +24,19 @@ const NavItem = styled.li`
     md:mr-5
     cursor-pointer
     text-black
-    hover: text-gray-700  
+    hover:text-gray-700
     transition
     ease-in-out
     duration-500
 `}
 `
 
-export const NavItems = ({ show }:Props) => {
+export const NavItems = ({ show }: Props) => {
   const isMobile = useMediaQuery({ maxWidth: SCREENS.sm })
 
   return (
-    <ListContainer className={isMobile ? `mobVersion ${show? 'active' : ''}` : "" }>
+    <ListContainer
+      className={isMobile ? `mobVersion ${show ? "active" : ""}` : ""}>
       <NavItem>
         <a href="#!">Home</a>
       </NavItem>
